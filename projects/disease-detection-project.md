@@ -1,10 +1,8 @@
 # Disease detection Project using Chest X-ray Database
 This project aims at a new chest X-ray database, namely “ChestX-ray8”, which comprises 108,948 frontalview X-ray images of 32,717 unique patients with the textmined eight disease image labels (where each image can have multi-labels), from the associated radiological reports using natural language processing.
 ## Abstract
-## Introduction
 Chest X-Rays are the most reliable radiobiological imprints of patients, widely used to efficiently diagnose an array of common thoracic diseases. For too long, vast accumulations of image data and their associated diagnoses have been stored in the Picture Archiving and Communication Systems (PACS) of several hospitals and medical institutions. In the meanwhile, data-hungry Deep Learning systems lie in wait of voluminous databases just like these, at the cusp of fulfilling the promise of fully-automated and accurate disease diagnosis. Through this project, we hope to unite one such vast database, the “ChestX-ray8" dataset, with powerful Deep Learning Systems, in order to automate the diagnosis of eight common kinds of lung diseases.
-
-Let us first address few questions as below, 
+## Introduction 
 ### Why Deep Learning for Disease Diagnostics?
   * Convolutional Neural Networks, which form the soul of Deep Learning systems, are designed with the assumption that they will be processing images, according to computer science experts at Stanford University- allowing the networks to operate more efficiently and handle larger images.
   * As a result, some CNNs are approaching – or even surpassing – the accuracy of human diagnosticians when identifying important features in diagnostic imaging studies.
@@ -24,6 +22,8 @@ This is exactly why we feel that the quest to build such a system is truly relev
 
 ## Methodology
 Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections - one between each layer and its subsequent layer - our network has L(L+1)/2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. 
+Entire project is divided into following stages within the team for implementation.
+
 ### Sampling
 The dataset was highly imbalanced, a high of [62,000+] and low of 110, and huge for our timeline and we had to resort to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000].
 
@@ -56,7 +56,7 @@ We also had the technical expertise that allowed us to try novel activation func
 
 ## Results
 ## Discussion
-* DenseNets have several compelling advantages: 
+* Reason to use Densenet over Resnet  
   * they alleviate the vanishing-gradient problem 
   * strengthen feature propagation 
   * encourage feature reuse 
@@ -88,7 +88,6 @@ Anju Mercian | @Anju Mercian
 George Christopoulos | @George Christopoulos
 Ashish Bairwa  | @Stark
 Pooja Vinod | @Pooja Vinod
-Anju Merician | @Anju Mercian
 Ingus Terbets | @Ingus Terbets
 Alexander Villasoto | @Alexander Villasoto
 Olivia Milgrom | @Olivia
