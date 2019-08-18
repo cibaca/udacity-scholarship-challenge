@@ -23,7 +23,9 @@ This is exactly why we feel that the quest to build such a system is truly relev
 ## Methodology
 Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections - one between each layer and its subsequent layer - our network has L(L+1)/2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. 
 
-Entire project is divided into following stages within the team for implementation.
+Given our time constraint, we chose to divide ourselves into sub teams corresponding to the demarcated phases of this project. The benefits of this approach was a smooth iterative process - where we could have quick adjustments from previous phases to facilitate better outcomes for a subsequent phase - and speed due to parallel implementations at the various phases.
+We also adopted a scrum model, where the entire period was a sprint, and stand-up sessions within at most 2-day intervals served for progress update and team re-orientation where it was necessitated.
+Finally, our team model allowed us to use initial cycles as exploration to inform our final data, preprocessing and model strategies. With each cycle, we redefined our goals while maintaining the general objective of facilitating faster lung X-ray assessments.
 
 ![Stages for Project](https://user-images.githubusercontent.com/37798451/63227239-07e9d980-c202-11e9-8bfd-29c635a12956.png)
 
@@ -136,7 +138,12 @@ Few Limitations that we found while working on this project are as follows:
 
 ## Conclusion
 ## Recommendations
-The team would like to extend the project to institutions where aid to diagnosis is of utmost importance. Currently, as per discussed in the previous sections, the project is limited to the public domain dataset and to the best-effort analyses of health records via natural language processing. The idea here is to improve the current accuracy of the model by augmenting it with real-world datasets which are available from medical institutions. 
+The team would like to extend the project to institutions where aid to diagnosis is of utmost importance. 
+* Currently the project is limited to the public domain dataset and to the best-effort analyses of health records via natural language processing. The idea here is to improve the current accuracy of the model by augmenting it with real-world datasets which are available from medical institutions. 
+* Due to the sensitive nature of these datasets and with intentions of privacy, naturally these are currently being kept private. With the power of federated learning, we can adopt a strategy where medical institutions would not need to relent their private datasets to a central server, which might lead to privacy leakage. Instead we open an interface for them to feed the data within the institution, train the model on-site and only transmit gradients and other model information to the central server which we have access and do model aggregation accordingly. 
+* Firstly, we coordinate with medical institutions to install Internet-enabled devices on-premise. For this, we think of Raspberry Pi 3 devices, small, lightweight and powerful enough to do the tasks we need for local training. We plan on creating headless setup to each Raspberry Pi devices with web server connected on their local network. This web server can be accessed by representatives in-house to feed X-ray data and other relevant information pertinent to local training. We make sure that the data to be fed to locally matches the global requirements for model improvement. 
+* We can send model definition to each Raspberry Pi’s installed remotely. We then orchestrate model updates on-demand using the power of PySyft’s secure model parameter aggregation, leveraging mathematical techniques per actor to encrypt model information so trusted aggregators cannot glean on raw gradients sent by federated nodes.
+Of course, there needs to be full coordination with hospitals, clinics and radiologic facilities who have quality datasets to join in our planned IoT-enabled space specifically for this use case. In return, we enable intuitive interface to help doctors in diagnosis. 
 
 Due to the sensitive nature of these datasets and with intentions of privacy, naturally these are currently being kept private. 
 ## Appendix
