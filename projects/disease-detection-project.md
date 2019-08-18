@@ -1,7 +1,7 @@
 # Disease detection Project using Chest X-ray Database
 This project aims at a new chest X-ray database, namely “ChestX-ray8”, which comprises 108,948 frontalview X-ray images of 32,717 unique patients with the textmined eight disease image labels (where each image can have multi-labels), from the associated radiological reports using natural language processing.
 ## Abstract
-Chest X-Rays are the most reliable radiobiological imprints of patients, widely used to efficiently diagnose an array of common thoracic diseases. For too long, vast accumulations of image data and their associated diagnoses have been stored in the Picture Archiving and Communication Systems (PACS) of several hospitals and medical institutions. In the meanwhile, data-hungry Deep Learning systems lie in wait of voluminous databases just like these, at the cusp of fulfilling the promise of fully-automated and accurate disease diagnosis. Through this project, we hope to unite one such vast database, the “ChestX-ray8" dataset, with powerful Deep Learning Systems, in order to automate the diagnosis of eight common kinds of lung diseases.
+Chest X-Rays are the most reliable radiobiological imprints of patients,they are widely used to efficiently diagnose an array of common thoracic diseases. For too long, vast accumulations of image data and their associated diagnoses have been stored in the Picture Archiving and Communication Systems (PACS) of several hospitals and medical institutions. In the meanwhile, data-hungry Deep Learning systems lie in wait of voluminous databases just like these, at the cusp of fulfilling the promise of fully-automated and accurate disease diagnosis. Through this project, we hope to unite one such vast database, the “ChestX-ray8" dataset, with powerful Deep Learning Systems, in order to automate the diagnosis of eight common kinds of lung diseases.
 ## Introduction 
 ### Why Deep Learning for Disease Diagnostics?
   * Convolutional Neural Networks, which form the soul of Deep Learning systems, are designed with the assumption that they will be processing images, according to computer science experts at Stanford University- allowing the networks to operate more efficiently and handle larger images.
@@ -30,7 +30,7 @@ Finally, our team model allowed us to use initial cycles as exploration to infor
 ![Stages for Project](https://user-images.githubusercontent.com/37798451/63227239-07e9d980-c202-11e9-8bfd-29c635a12956.png)
 
 ### Sampling
-The dataset was highly imbalanced, a high of 60361 and low of 110, and huge for our timeline and we had to resort to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000]. The initial distribution for images with single class labels is given below.
+The dataset was highly imbalanced, a high value in distribution of 60361 and low of 110, and huge in size for our timeline and we had to resort it to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000]. The initial distribution for images with single class labels is given below.
 Labels | Distributions
 ------------ | -------------
 No Finding | 60361
@@ -49,7 +49,7 @@ Edema | 628
 Pneumonia | 322
 Hernia | 110
 
-We initially tested our strategies for classifying all 15 conditions and redefined our goals through exploration, until in addition to identifying Healthy X-rays, the model could more accurately classify two conditions, Cardiomegaly and Effusion.
+We initially tested our strategies for classifying all 15 conditions and redefined our goals through exploration, until in addition to identifying Healthy X-rays (No Finding), the model could more accurately classify two conditions, Cardiomegaly and Effusion.
 
 For our final round, and based on clinical considerations, we proceeded with two sets:
 * Version 4.1 - for images taken using both antero-posterior position (AP) and postero-anterior position (PA).
@@ -62,7 +62,7 @@ The distribution for Version 4.1 finally settled at:
 * (AP + PA) No Finding – 1500
 * (AP + PA) Effusion - 1500
 The distribution for Version 4.2 finally settled at:
-* (AP + PA) for cardiomegaly – 1093
+* (AP + PA) Cardiomegaly – 1093
 * (PA) No Finding – 1500
 * (PA) Effusion - 1500
 
