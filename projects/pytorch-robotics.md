@@ -14,16 +14,16 @@ It may not feature a physical computer, but it can be a time saver, and a bit of
 
 ## Steps to install Raspberry Pi as an Emulator. 
 * Installing Virtual box on Windows Machine. 
-      VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use. 
-      * You can download the Virtual box from https://www.virtualbox.org/wiki/Downloads . 
-      * Choose the right version of your operating system. 
-      * After you’ve downloaded the executable, install VirtualBox by following the installation wizard’s instructions.
-      * Change the Type to Linux and Version to Debian 64-bit.
-      * Select Next.
-      * Set 1024MB RAM in the next window.
-      * Set 8-10GB of disk space in the next window and then select Create.
-      * VirtualBox may take a few seconds to create the virtual machine. Once complete, it should appear in the left pane of the main VirtualBox window.
-      - Select Start in the main VirtualBox window to start the VM.
+  VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use. 
+    * You can download the Virtual box from https://www.virtualbox.org/wiki/Downloads 
+    * Choose the right version of your operating system. 
+    * After you’ve downloaded the executable, install VirtualBox by following the installation wizard’s instructions.
+    * Change the Type to Linux and Version to Debian 64-bit.
+    * Select Next.
+    * Set 1024MB RAM in the next window.
+    * Set 8-10GB of disk space in the next window and then select Create.
+    * VirtualBox may take a few seconds to create the virtual machine. Once complete, it should appear in the left pane of the main VirtualBox window.
+    * Select Start in the main VirtualBox window to start the VM.
 * Download Debian Raspberry Pi Desktop
   * You can download Raspberry Pi Desktop from https://www.raspberrypi.org/downloads/raspberry-pi-desktop/ 
   * Select Install when prompted.
@@ -51,3 +51,6 @@ You now have a fully functional Raspberry Pi Desktop running on Windows.
 You can emulate Raspberry Pi rather easier in Windows 10 if you have VirtualBox. You download the OS, install it in VirtualBox and run Raspberry Pi within the virtual machine. It works with most architecture types and most versions of Windows 10 so you should be fine. VirtualBox is free too.
       
 Also, Microsoft Azure has a downloadable Raspberry Pi emulator and also a neat client simulator online. These two are easy ways to experiment with Raspberry Pi without buying the hardware. It is also a useful way to simulate your code purely in software before installing it onto hardware.
+
+# Future Scope
+* To train a Recurrent Neural Network on a virtual worker for Raspberry PI via PySyft
