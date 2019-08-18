@@ -22,46 +22,106 @@ This is exactly why we feel that the quest to build such a system is truly relev
 
 ## Methodology
 Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections - one between each layer and its subsequent layer - our network has L(L+1)/2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. 
+
 Entire project is divided into following stages within the team for implementation.
 
+![Stages for Project](https://user-images.githubusercontent.com/37798451/63227239-07e9d980-c202-11e9-8bfd-29c635a12956.png)
+
 ### Sampling
-The dataset was highly imbalanced, a high of [62,000+] and low of 110, and huge for our timeline and we had to resort to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000].
+The dataset was highly imbalanced, a high of 60361 and low of 110, and huge for our timeline and we had to resort to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000]. The initial distribution for images with single class labels is given below.
+Labels | Distributions
+------------ | -------------
+No Finding | 60361
+Infiltration | 9547
+Atelectasis | 4215
+Effusion | 3955
+Nodule | 2705
+Pneumothorax | 2194
+Mass | 2139
+Consolidation | 1310
+Pleural_Thickening | 1126
+Cardiomegaly | 1093
+Emphysema | 892
+Fibrosis | 727
+Edema | 628
+Pneumonia | 322
+Hernia | 110
 
 We initially tested our strategies for classifying all 15 conditions and redefined our goals through exploration, until in addition to identifying Healthy X-rays, the model could more accurately classify two conditions, Cardiomegaly and Effusion.
+
 For our final round, and based on clinical considerations, we proceeded with two sets:
-Version 4.1 - for images taken using both antero-posterior position (AP) and postero-anterior position (PA).
-Version 4.2 - containing images taken using PA for Effusion and healthy (No finding) classes, and AP and PA for cardiomegaly. Exception was made for the latter due to inadequate PA images.
+* Version 4.1 - for images taken using both antero-posterior position (AP) and postero-anterior position (PA).
+* Version 4.2 - containing images taken using PA for Effusion and healthy (No finding) classes, and AP and PA for cardiomegaly. 
+
+Exception was made for the latter due to inadequate PA images.
+
 The distribution for Version 4.1 finally settled at:
- (AP + PA) Cardiomegaly – 1093
- (AP + PA) No Finding – 1500
- (AP + PA) Effusion - 1500
+* (AP + PA) Cardiomegaly – 1093
+* (AP + PA) No Finding – 1500
+* (AP + PA) Effusion - 1500
 The distribution for Version 4.2 finally settled at:
- (AP + PA) for cardiomegaly – 1093
-(PA) No Finding – 1500
-(PA) Effusion - 1500
- 
+* (AP + PA) for cardiomegaly – 1093
+* (PA) No Finding – 1500
+* (PA) Effusion - 1500
+
 ### Preprocessing
 Given that our dataset covered medical conditions which manifestations could be present at edges of X-ray images, we exercised caution with our transformations. After several deliberations and clinical considerations, we resorted to avoiding cropping and extreme random rotations and kept to these:
-Random Rotation: within the angle range -10 to 10, with expansion enabled
-Resize: to a size of 224 by 224 to match our densenet model input size
-Random Horizontal Flip
-Random Vertical Flip
- Conversion To Pytorch floatTensor type
+* Random Rotation: within the angle range -10 to 10, with expansion enabled
+* Resize: to a size of 224 by 224 to match our densenet model input size
+* Random Horizontal Flip
+* Random Vertical Flip
+* Conversion To Pytorch floatTensor type
 This minimalistic approach was our shot at preserving as much information that would be clinically relevant for diagnosing our target conditions.
- 
+
 ### Modelling
 We had a run with densenet161, and resNext50 during our model staging to assess and compare performances, before finally settling with densenet161.
 The modelling stage was characterized by several iterative cycles that called for new sampling and processing strategies on demand. Notwithstanding, the team model facilitated swift responses so that we could re-orient quickly without disrupting overall progress.
 We also had the technical expertise that allowed us to try novel activation functions - namely mila, mish and beta mish – which we believe contributed greatly to our results, in addition to hyperparameter tunings.
 
+For activation Functions we are using β-Mish and Mila. 
+*β-Mish*
+It is an uni-parametric activation activation inspired from Mish activation function. When β=1, β-Mish becomes the standard version of Mish. β-Mish can be mathematically represented using the function:
+
+![B-mish](https://user-images.githubusercontent.com/37798451/63227800-20f58900-c208-11e9-8a8b-3ee5f425e086.PNG)
+
+If β=1.5, the function ranges from: ≈-0.451103 to ∞. For most benchmarks, β was set to be 1.5.
+![Mish3](https://user-images.githubusercontent.com/37798451/63227815-569a7200-c208-11e9-9412-b802fe7bf20f.png)
+
+*Mila*
+Mila is an uniparametric activation function inspired from the Mish Activation Function. The parameter β is used to control the concavity of the Global Minima of the Activation Function where β=0 is the baseline Mish Activation Function. Varying β in the negative scale reduces the concavity and vice versa. β is introduced to tackle gradient death scenarios due to the sharp global minima of Mish Activation Function.
+
+The mathematical function of Mila is shown as below:
+![Mila](https://user-images.githubusercontent.com/37798451/63227901-4df66b80-c209-11e9-8e8b-1ab785410177.PNG)
+
+
 ## Results
+### Dataset 1: Mixed Dataset (PA and AP) using β-Mish activation function 
+Test Loss: 0.541957
+Label | Accuracy
+------------ | -------------
+Cardiomegaly | 83.000% (83/100)
+Effusion | 79.000% (79/100)
+No Finding | 76.000% (76/100)
+Overall | 79.3333% (238/300)
+### Dataset 2: PA only using Mila activation function
+Test Loss: 0.456018
+Label | Accuracy
+------------ | -------------
+Cardiomegaly | 89.000% (89/100)
+Effusion | 83.000% (83/100)
+No Finding | 75.000% (75/100)
+Overall | 82.3333% (247/300)
+
 ## Discussion
+* Concerns for AP pictures 
+Considering the classes we are including (Cardiomegaly, effusion, no finding). Both of cardiomegaly and effusion are sensitive to positions. But considering the picture quantities we have for cardiomegaly, we decided to still include both of AP and PA pictures. This may lower our accuracy of our model.
 * Reason to use Densenet over Resnet  
   * they alleviate the vanishing-gradient problem 
   * strengthen feature propagation 
   * encourage feature reuse 
   * substantially reduce the number of parameters
 DenseNets obtain significant improvements over the state-of-the-art on most of them, whilst requiring less memory and computation to achieve high performance.
+
 ## Limitations
 Few Limitations that we found while working on this project are as follows:
 - The fluorescence channel
@@ -101,3 +161,5 @@ Archit | @Archit
 Cibaca Khandelwal | @cibaca
 Oudarjya Sen Sarma | @Oudarjya Sen Sarma
 Rosa Paccotacya | @Rosa Paccotacya
+
+## References
