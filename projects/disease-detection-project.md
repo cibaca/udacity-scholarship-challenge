@@ -32,7 +32,8 @@ Finally, our team model allowed us to use initial cycles as exploration to infor
 ![Stages for Project](https://user-images.githubusercontent.com/37798451/63227239-07e9d980-c202-11e9-8bfd-29c635a12956.png)
 
 ### Sampling
-The dataset was highly imbalanced, a high of 60361 and low of 110, and huge for our timeline and we had to resort to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000]. 
+
+The dataset was highly imbalanced, a high value in distribution of 60361 and low of 110, and huge in size for our timeline and we had to resort it to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000]. 
 
 The initial distribution for images with single class labels is given below.
 
@@ -54,7 +55,7 @@ Edema | 628
 Pneumonia | 322
 Hernia | 110
 
-We initially tested our strategies for classifying all 15 conditions and redefined our goals through exploration, until in addition to identifying Healthy X-rays, the model could more accurately classify two conditions, Cardiomegaly and Effusion.
+We initially tested our strategies for classifying all 15 conditions and redefined our goals through exploration, until in addition to identifying Healthy X-rays (No Finding), the model could more accurately classify two conditions, Cardiomegaly and Effusion.
 
 For our final round, and based on clinical considerations, we proceeded with two sets:
 * Version 4.1 - for images taken using both antero-posterior position (AP) and postero-anterior position (PA).
@@ -68,7 +69,7 @@ The distribution for Version 4.1 finally settled at:
 * (AP + PA) Effusion - 1500
 
 The distribution for Version 4.2 finally settled at:
-* (AP + PA) for cardiomegaly – 1093
+* (AP + PA) Cardiomegaly – 1093
 * (PA) No Finding – 1500
 * (PA) Effusion - 1500
 
