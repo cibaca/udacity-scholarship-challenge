@@ -2,21 +2,23 @@
 This project aims at a new chest X-ray database, namely “ChestX-ray8”, which comprises 108,948 frontalview X-ray images of 32,717 unique patients with the textmined eight disease image labels (where each image can have multi-labels), from the associated radiological reports using natural language processing.
 ## Abstract
 Chest X-Rays are the most reliable radiobiological imprints of patients, widely used to efficiently diagnose an array of common thoracic diseases. For too long, vast accumulations of image data and their associated diagnoses have been stored in the Picture Archiving and Communication Systems (PACS) of several hospitals and medical institutions. In the meanwhile, data-hungry Deep Learning systems lie in wait of voluminous databases just like these, at the cusp of fulfilling the promise of fully-automated and accurate disease diagnosis. Through this project, we hope to unite one such vast database, the “ChestX-ray8" dataset, with powerful Deep Learning Systems, in order to automate the diagnosis of eight common kinds of lung diseases. Currently we will be focusing on three kinds of diseases to start with. 
+
 ## Introduction 
 ### Why Deep Learning for Disease Diagnostics?
-  * Convolutional Neural Networks, which form the soul of Deep Learning systems, are designed with the assumption that they will be processing images, according to computer science experts at Stanford University- allowing the networks to operate more efficiently and handle larger images.
+  * Convolutional Neural Networks, which form the soul of Deep Learning systems, are designed with the assumption that they will be processing images, according to computer science experts at Stanford University, allowing the networks to operate more efficiently and handle larger images.
   * As a result, some CNNs are approaching – or even surpassing – the accuracy of human diagnosticians when identifying important features in diagnostic imaging studies.
   * In June of 2018, a study in the Annals of Oncology showed that a convolutional neural network trained to analyze dermatology images identified melanoma with ten percent more specificity than human clinicians.
   * Researchers at the Mount Sinai Icahn School of Medicine have developed a deep neural network capable of diagnosing crucial neurological conditions, such as stroke and brain hemorrhage, 150 times faster than human radiologists. The tool took just 1.2 seconds to process the image, analyze its contents, and alert providers of a problematic clinical finding.
 
-Speed and Accuracy are characteristic features of ‘Deep Learning- driven’ Medical Diagnostics. This indicates the potential for getting optimum results in exploring this field.
+All this reasons shows that Speed and Accuracy are characteristic features of ‘Deep Learning- driven’ Medical Diagnostics. This indicates the potential for getting optimum results in exploring this field.
+
 ### Why does Medical Diagnosis need Deep Learning?
   * **More affordable treatment:** Diagnosis is faster and more accurate with automation; doctors will be able to recommend the right medicine to patients before illnesses aggravate to require more expensive treatment options.
   * **Safer solutions:** More accurate diagnosis means there’s a lower risk of complications associated with patients receiving ineffective or incorrect treatment.
   * **More patients treated:** By reducing the time it takes to complete a diagnosis, laboratories can perform more tests, covering a much larger number of patients in much lesser time. 
   * **Addressing the global ‘Physician Shortage’:** This is a growing concern in many countries around the world, due to a growing demand for physicians that outmatches the supply. The World Health Organization (WHO) estimates that there is a global shortage of 4.3 million physicians, nurses, and other health professionals. The shortage is often starkest in developing nations due to the limited numbers and capacity of medical schools in these countries. Additionally, rural and remote areas also commonly struggle with a physician shortage the world over.
 
-The growing need for more qualified medical personnel worldwide is like an incomplete jigsaw puzzle.  Deep Learning systems have the potential to finish this puzzle once and for all.
+So,the growing need for more qualified medical personnel worldwide is like an incomplete jigsaw puzzle.  Deep Learning systems have the potential to finish this puzzle once and for all.
 
 This is exactly why we feel that the quest to build such a system is truly relevant to the needs of society at present. There is no denying the fact that with an ever-growing global population, we are going to need alternative AI-based medical personnel to assist us in achieving the sustainable development goal of providing “**A**ffordable,**A**ccurate and **A**dequate Healthcare for All”. 
 
