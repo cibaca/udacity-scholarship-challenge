@@ -1,22 +1,24 @@
 # Disease detection Project using Chest X-ray Database
 This project aims at a new chest X-ray database, namely “ChestX-ray8”, which comprises 108,948 frontalview X-ray images of 32,717 unique patients with the textmined eight disease image labels (where each image can have multi-labels), from the associated radiological reports using natural language processing.
 ## Abstract
-Chest X-Rays are the most reliable radiobiological imprints of patients,they are widely used to efficiently diagnose an array of common thoracic diseases. For too long, vast accumulations of image data and their associated diagnoses have been stored in the Picture Archiving and Communication Systems (PACS) of several hospitals and medical institutions. In the meanwhile, data-hungry Deep Learning systems lie in wait of voluminous databases just like these, at the cusp of fulfilling the promise of fully-automated and accurate disease diagnosis. Through this project, we hope to unite one such vast database, the “ChestX-ray8" dataset, with powerful Deep Learning Systems, in order to automate the diagnosis of eight common kinds of lung diseases.
+Chest X-Rays are the most reliable radiobiological imprints of patients, widely used to efficiently diagnose an array of common thoracic diseases. For too long, vast accumulations of image data and their associated diagnoses have been stored in the Picture Archiving and Communication Systems (PACS) of several hospitals and medical institutions. In the meanwhile, data-hungry Deep Learning systems lie in wait of voluminous databases just like these, at the cusp of fulfilling the promise of fully-automated and accurate disease diagnosis. Through this project, we hope to unite one such vast database, the “ChestX-ray8" dataset, with powerful Deep Learning Systems, in order to automate the diagnosis of eight common kinds of lung diseases. Currently we will be focusing on three kinds of diseases to start with. 
+
 ## Introduction 
 ### Why Deep Learning for Disease Diagnostics?
-  * Convolutional Neural Networks, which form the soul of Deep Learning systems, are designed with the assumption that they will be processing images, according to computer science experts at Stanford University- allowing the networks to operate more efficiently and handle larger images.
+  * Convolutional Neural Networks, which form the soul of Deep Learning systems, are designed with the assumption that they will be processing images, according to computer science experts at Stanford University, allowing the networks to operate more efficiently and handle larger images.
   * As a result, some CNNs are approaching – or even surpassing – the accuracy of human diagnosticians when identifying important features in diagnostic imaging studies.
   * In June of 2018, a study in the Annals of Oncology showed that a convolutional neural network trained to analyze dermatology images identified melanoma with ten percent more specificity than human clinicians.
   * Researchers at the Mount Sinai Icahn School of Medicine have developed a deep neural network capable of diagnosing crucial neurological conditions, such as stroke and brain hemorrhage, 150 times faster than human radiologists. The tool took just 1.2 seconds to process the image, analyze its contents, and alert providers of a problematic clinical finding.
 
-Speed and Accuracy are characteristic features of ‘Deep Learning- driven’ Medical Diagnostics. This indicates the potential for getting optimum results in exploring this field.
+All this reasons shows that Speed and Accuracy are characteristic features of ‘Deep Learning- driven’ Medical Diagnostics. This indicates the potential for getting optimum results in exploring this field.
+
 ### Why does Medical Diagnosis need Deep Learning?
   * **More affordable treatment:** Diagnosis is faster and more accurate with automation; doctors will be able to recommend the right medicine to patients before illnesses aggravate to require more expensive treatment options.
   * **Safer solutions:** More accurate diagnosis means there’s a lower risk of complications associated with patients receiving ineffective or incorrect treatment.
   * **More patients treated:** By reducing the time it takes to complete a diagnosis, laboratories can perform more tests, covering a much larger number of patients in much lesser time. 
   * **Addressing the global ‘Physician Shortage’:** This is a growing concern in many countries around the world, due to a growing demand for physicians that outmatches the supply. The World Health Organization (WHO) estimates that there is a global shortage of 4.3 million physicians, nurses, and other health professionals. The shortage is often starkest in developing nations due to the limited numbers and capacity of medical schools in these countries. Additionally, rural and remote areas also commonly struggle with a physician shortage the world over.
 
-The growing need for more qualified medical personnel worldwide is like an incomplete jigsaw puzzle.  Deep Learning systems have the potential to finish this puzzle once and for all.
+So,the growing need for more qualified medical personnel worldwide is like an incomplete jigsaw puzzle.  Deep Learning systems have the potential to finish this puzzle once and for all.
 
 This is exactly why we feel that the quest to build such a system is truly relevant to the needs of society at present. There is no denying the fact that with an ever-growing global population, we are going to need alternative AI-based medical personnel to assist us in achieving the sustainable development goal of providing “**A**ffordable,**A**ccurate and **A**dequate Healthcare for All”. 
 
@@ -30,7 +32,11 @@ Finally, our team model allowed us to use initial cycles as exploration to infor
 ![Stages for Project](https://user-images.githubusercontent.com/37798451/63227239-07e9d980-c202-11e9-8bfd-29c635a12956.png)
 
 ### Sampling
-The dataset was highly imbalanced, a high value in distribution of 60361 and low of 110, and huge in size for our timeline and we had to resort it to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000]. The initial distribution for images with single class labels is given below.
+
+The dataset was highly imbalanced, a high value in distribution of 60361 and low of 110, and huge in size for our timeline and we had to resort it to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000]. 
+
+The initial distribution for images with single class labels is given below.
+
 Labels | Distributions
 ------------ | -------------
 No Finding | 60361
@@ -61,6 +67,7 @@ The distribution for Version 4.1 finally settled at:
 * (AP + PA) Cardiomegaly – 1093
 * (AP + PA) No Finding – 1500
 * (AP + PA) Effusion - 1500
+
 The distribution for Version 4.2 finally settled at:
 * (AP + PA) Cardiomegaly – 1093
 * (PA) No Finding – 1500
@@ -81,16 +88,14 @@ The modelling stage was characterized by several iterative cycles that called fo
 We also had the technical expertise that allowed us to try novel activation functions - namely mila, mish and beta mish – which we believe contributed greatly to our results, in addition to hyperparameter tunings.
 
 For activation Functions we are using β-Mish and Mila. 
-*β-Mish*
-It is an uni-parametric activation activation inspired from Mish activation function. When β=1, β-Mish becomes the standard version of Mish. β-Mish can be mathematically represented using the function:
+**β-Mish** is an uni-parametric activation inspired by the Mish activation function - when β=1, β-Mish becomes the standard version of Mish - and can be mathematically represented using the function:
 
 ![B-mish](https://user-images.githubusercontent.com/37798451/63227800-20f58900-c208-11e9-8a8b-3ee5f425e086.PNG)
 
 If β=1.5, the function ranges from: ≈-0.451103 to ∞. For most benchmarks, β was set to be 1.5.
 ![Mish3](https://user-images.githubusercontent.com/37798451/63227815-569a7200-c208-11e9-9412-b802fe7bf20f.png)
 
-*Mila*
-Mila is an uniparametric activation function inspired from the Mish Activation Function. The parameter β is used to control the concavity of the Global Minima of the Activation Function where β=0 is the baseline Mish Activation Function. Varying β in the negative scale reduces the concavity and vice versa. β is introduced to tackle gradient death scenarios due to the sharp global minima of Mish Activation Function.
+**Mila** is an uniparametric activation function inspired from the Mish Activation Function. The parameter β is used to control the concavity of the Global Minima of the Activation Function where β=0 is the baseline Mish Activation Function. Varying β in the negative scale reduces the concavity and vice versa. β is introduced to tackle gradient death scenarios due to the sharp global minima of Mish Activation Function.
 
 The mathematical function of Mila is shown as below:
 ![Mila](https://user-images.githubusercontent.com/37798451/63227901-4df66b80-c209-11e9-8e8b-1ab785410177.PNG)
@@ -99,14 +104,17 @@ The mathematical function of Mila is shown as below:
 ## Results
 ### Dataset 1: Mixed Dataset (PA and AP) using β-Mish activation function 
 Test Loss: 0.541957
+
 Label | Accuracy
 ------------ | -------------
 Cardiomegaly | 83.000% (83/100)
 Effusion | 79.000% (79/100)
 No Finding | 76.000% (76/100)
 Overall | 79.3333% (238/300)
+
 ### Dataset 2: PA only using Mila activation function
 Test Loss: 0.456018
+
 Label | Accuracy
 ------------ | -------------
 Cardiomegaly | 89.000% (89/100)
