@@ -1,7 +1,8 @@
 # Disease detection Project using Chest X-ray Database
 This project aims at a new chest X-ray database, namely “ChestX-ray8”, which comprises 108,948 frontalview X-ray images of 32,717 unique patients with the textmined eight disease image labels (where each image can have multi-labels), from the associated radiological reports using natural language processing.
 ## Abstract
-Chest X-Rays are the most reliable radiobiological imprints of patients,also they are widely used to efficiently diagnose an array of common thoracic diseases. For too long, vast accumulations of image data and their associated diagnoses have been stored in the Picture Archiving and Communication Systems (PACS) of several hospitals and medical institutions. In the meanwhile, data-hungry Deep Learning systems have lied in wait of voluminous databases just like these, at the cusp of fulfilling the promise of fully-automated and accurate disease diagnosis. Through this project, we hope to unite one such vast database, the “ChestX-ray8" dataset, with powerful Deep Learning Systems, in order to automate the diagnosis of eight common kinds of lung diseases.
+Chest X-Rays are the most reliable radiobiological imprints of patients, widely used to efficiently diagnose an array of common thoracic diseases. For too long, vast accumulations of image data and their associated diagnoses have been stored in the Picture Archiving and Communication Systems (PACS) of several hospitals and medical institutions. In the meanwhile, data-hungry Deep Learning systems lie in wait of voluminous databases just like these, at the cusp of fulfilling the promise of fully-automated and accurate disease diagnosis. Through this project, we hope to unite one such vast database, the “ChestX-ray8" dataset, with powerful Deep Learning Systems, in order to automate the diagnosis of eight common kinds of lung diseases. Currently we will be focusing on three kinds of diseases to start with. 
+
 ## Introduction 
 ### Why Deep Learning for Disease Diagnostics?
   * Convolutional Neural Networks, which form the soul of Deep Learning systems, are designed with the assumption that they will be processing images, according to computer science experts at Stanford University, allowing the networks to operate more efficiently and handle larger images.
@@ -31,7 +32,10 @@ Finally, our team model allowed us to use initial cycles as exploration to infor
 ![Stages for Project](https://user-images.githubusercontent.com/37798451/63227239-07e9d980-c202-11e9-8bfd-29c635a12956.png)
 
 ### Sampling
-The dataset was highly imbalanced, a high of 60361 and low of 110, and huge for our timeline and we had to resort to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000]. The initial distribution for images with single class labels is given below.
+The dataset was highly imbalanced, a high of 60361 and low of 110, and huge for our timeline and we had to resort to using a well represented sample. We eventually scaled down on the dataset to [12000] from [112000]. 
+
+The initial distribution for images with single class labels is given below.
+
 Labels | Distributions
 ------------ | -------------
 No Finding | 60361
@@ -62,6 +66,7 @@ The distribution for Version 4.1 finally settled at:
 * (AP + PA) Cardiomegaly – 1093
 * (AP + PA) No Finding – 1500
 * (AP + PA) Effusion - 1500
+
 The distribution for Version 4.2 finally settled at:
 * (AP + PA) for cardiomegaly – 1093
 * (PA) No Finding – 1500
@@ -82,16 +87,14 @@ The modelling stage was characterized by several iterative cycles that called fo
 We also had the technical expertise that allowed us to try novel activation functions - namely mila, mish and beta mish – which we believe contributed greatly to our results, in addition to hyperparameter tunings.
 
 For activation Functions we are using β-Mish and Mila. 
-*β-Mish*
-It is an uni-parametric activation activation inspired from Mish activation function. When β=1, β-Mish becomes the standard version of Mish. β-Mish can be mathematically represented using the function:
+**β-Mish** is an uni-parametric activation inspired by the Mish activation function - when β=1, β-Mish becomes the standard version of Mish - and can be mathematically represented using the function:
 
 ![B-mish](https://user-images.githubusercontent.com/37798451/63227800-20f58900-c208-11e9-8a8b-3ee5f425e086.PNG)
 
 If β=1.5, the function ranges from: ≈-0.451103 to ∞. For most benchmarks, β was set to be 1.5.
 ![Mish3](https://user-images.githubusercontent.com/37798451/63227815-569a7200-c208-11e9-9412-b802fe7bf20f.png)
 
-*Mila*
-Mila is an uniparametric activation function inspired from the Mish Activation Function. The parameter β is used to control the concavity of the Global Minima of the Activation Function where β=0 is the baseline Mish Activation Function. Varying β in the negative scale reduces the concavity and vice versa. β is introduced to tackle gradient death scenarios due to the sharp global minima of Mish Activation Function.
+**Mila** is an uniparametric activation function inspired from the Mish Activation Function. The parameter β is used to control the concavity of the Global Minima of the Activation Function where β=0 is the baseline Mish Activation Function. Varying β in the negative scale reduces the concavity and vice versa. β is introduced to tackle gradient death scenarios due to the sharp global minima of Mish Activation Function.
 
 The mathematical function of Mila is shown as below:
 ![Mila](https://user-images.githubusercontent.com/37798451/63227901-4df66b80-c209-11e9-8e8b-1ab785410177.PNG)
@@ -100,14 +103,17 @@ The mathematical function of Mila is shown as below:
 ## Results
 ### Dataset 1: Mixed Dataset (PA and AP) using β-Mish activation function 
 Test Loss: 0.541957
+
 Label | Accuracy
 ------------ | -------------
 Cardiomegaly | 83.000% (83/100)
 Effusion | 79.000% (79/100)
 No Finding | 76.000% (76/100)
 Overall | 79.3333% (238/300)
+
 ### Dataset 2: PA only using Mila activation function
 Test Loss: 0.456018
+
 Label | Accuracy
 ------------ | -------------
 Cardiomegaly | 89.000% (89/100)
