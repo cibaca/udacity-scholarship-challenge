@@ -82,16 +82,16 @@
 
 ## DAY 16 : 12-07-2019
 -  Proceeded with Intro to Neural Networks from Intro to Deep Learning with PyTorch.  Currently working on Linear Regression Algorithm and Neural Network Architecture. Basically focusing on how all these things would help to build a neural network
-- Started Looking into the book deep learning by Ian GoodFellow. Thanks @shivamraisharma for adding in #sg_dl-goodfellows to explore this amazing book. 
+- Started Looking into the book deep learning by Ian GoodFellow.
 
 ## DAY 17 : 13-07-2019
-- Organized and attended **_Mumbai Virtual meetup-4_**. Had a amazing discussion with @Halwai Aftab Hasan @Shivam Raisharma @Ankit Dubey @Parth Hiren Shah @Rohit Sahoo @Mushrifah Hasan @bhavz @Praveer @Mohammad Hasnain Rajan @alpesh  on projects, kaggle, study plans, articles, resources sharing, study partners, etc.
+- Organized and attended **_Mumbai Virtual meetup-4_**. Had a amazing discussion on projects, kaggle, study plans, articles, resources sharing, study partners, etc.
 - Pairing with @Shivam Raisharma as a a study buddy
 - Exploring few resources for hands on for deep learning and differential privacy problems
 - Continuing reading and learning via the book "deep learning by Ian GoodFellow". 
 
 ## DAY 18 : 14-07-2019
-- Attended **_#women_who_code Virtual Meetup_** with @Aisha Javed @Temitope Oladokun @Seeratpal K. Jaura @Shubhangi Jena @Aarthi Alagammai @Agata [OR, USA] @Anju Mercian @Ankita Prakash @Jess @Shanmugapriya @Susanne Brockmann @SusanW @cibaca @Ursula Perez @Maria Jose Molina @Sky @Urvi Soni @Mushrifah Hasan @Ivy @Munira Omar @Marwa @Joyce Obi @Frida @Astha Adhikari @Rumanu @Qurat Ul Ain Fatima @Elena Kutanov @risper bevalyn @Nancy Al Aswad @Madison Estabrook (DL, FE, USA) @Manisha. Its amazing complete sunday spaic tasks by attending discussion and talks with these amazing ladies. 
+- Attended **_#women_who_code Virtual Meetup_**. Its amazing to end sunday spaic tasks by attending discussion and talks with these amazing ladies. 
 - Completed Intro to Neural Network Lesson from Intro to Deep Learning with PyTorch course.  
 - Continuing reading and learning Linear Algebra lessons from the book "deep learning by Ian GoodFellow". 
 - Started reading book by Jason Browniee to understand your data, create accurate models and work project end to end implementation of DL models.
@@ -103,52 +103,52 @@
 - Attended Virtual AMA session from Robert Wagner
 - Discussed with @Ish and @kkech for #open_src_and_github  
 
-## DAY 20 :
+## DAY 20 : 16-07-2019
 
 
-## DAY 21 :
+## DAY 21 : 17-07-2019
 
 
-## DAY 22 :
+## DAY 22 : 18-07-2019
 
 
-## DAY 23 :
+## DAY 23 : 19-07-2019
 
 
-## DAY 24 :
+## DAY 24 : 20-07-2019
 
 
-## DAY 25 :
+## DAY 25 : 21-07-2019
 
 
-## DAY 26 :
+## DAY 26 : 22-07-2019
 
 
-## DAY 27 :
+## DAY 27 : 23-07-2019
 
 
-## DAY 28 :
+## DAY 28 : 24-07-2019
 
 
-## DAY 29 :
+## DAY 29 : 25-07-2019
 
 
-## DAY 30 :
+## DAY 30 : 26-07-2019
 
 
-## DAY 31 :
+## DAY 31 : 27-07-2019
 
 
-## DAY 32 :
+## DAY 32 : 28-07-2019
 
 
-## DAY 33 :
+## DAY 33 : 29-07-2019
 
 
-## DAY 34 :
+## DAY 34 : 30-07-2019
 
 
-## DAY 35 :
+## DAY 35 : 31-07-2019
 
 
 ## DAY 36 :
