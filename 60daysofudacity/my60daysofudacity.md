@@ -1,4 +1,6 @@
-# 60daysofudacity
+# My 60daysofudacity
+This page contains details on my 60 days of Udacity challenge. Pics shared in the challenge slack updates are uploaded on following link with Meetup names and day number
+https://drive.google.com/drive/folders/1u_ERVQQa8cFBzBSgspxC3YrKmX5GNYB4?usp=sharing 
 ## DAY 1 : 27-06-2019
 - Pledged for #60daysofudacity
 - Read docs for PyTorch, Deep Learning
